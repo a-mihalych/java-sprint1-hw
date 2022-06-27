@@ -1,19 +1,17 @@
 public class Converter {
-    private int stepLength;     // длина в см (75)
-    private int stepInCalories; // шаг в калориях (50)
+    // исправлено пожелание
+    // сделаны константы и без конструктора
+    private final double STEP_LENGTH = 0.00075;         // длина шага в км (75 см)
+    private final double STEP_IN_KILOCALORIES = 0.050;  // шаг в килокалориях (50 колорий)
 
-    public Converter() {
-        stepLength = 75;
-        stepInCalories = 50;
-    }
-
+    // исправлено пожелание, возврат значения
     // расчёт пройденного расстояния по количеству шагов (км)
     public double stepsInKm(int steps) {
-        return steps * stepLength / 100000;
+        return steps * STEP_LENGTH;
     }
 
     // расчёт потраченных килокалорий по количеству шагов
     public double stepsInKCalories(int steps) {
-        return steps * stepInCalories / 1000;
+        return steps * STEP_IN_KILOCALORIES;
     }
 }
